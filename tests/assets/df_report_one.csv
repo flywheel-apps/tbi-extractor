@@ -1,0 +1,28 @@
+target_phrase,target_group,modifier_phrase,modifier_group
+aneurysm,aneurysm,default,absent
+anoxic,anoxic,default,absent
+atrophy,atrophy,default,absent
+suprasellar cistern,cistern,leftward,abnormal
+contusion,contusion,default,absent
+shear,diffuse_axonal,severe,present
+epidural_hemorrhage,epidural_hemorrhage,default,absent
+facial_fracture,facial_fracture,default,absent
+fluid,fluid,"default, is_extraaxial_fluid_collection",present
+gray_white_differentiation,gray_white_differentiation,default,normal
+hemorrhage ,hemorrhage,"is noted, is_specific_hemorrhage",absent
+herniation,herniation,default,absent
+hydrocephalus,hydrocephalus,default,absent
+hyperattenuation,hyperdensities,present,present
+hypodensities,hypodensities,default,absent
+intracranial_pathology,intracranial_pathology,"default, is_intracranial_pathology",present
+"parenchymal hemorrhages, ",intraparenchymal_hemorrage,present,present
+hemorrhage is noted in the occipital horn,intraventricular_hemorrhage,additional,present
+ischemia,ischemia,default,absent
+mass_effect,mass_effect,default,absent
+microhemorrhage,microhemorrhage,default,absent
+midline shift,midline_shift,no external,absent
+pneumocephalus,pneumocephalus,default,absent
+skull_fracture,skull_fracture,default,absent
+subarachnoid hemorrhage ,subarachnoid_hemorrhage,multifocal,present
+subdural_hemorrhage,subdural_hemorrhage,default,absent
+swelling,swelling,default,absent
