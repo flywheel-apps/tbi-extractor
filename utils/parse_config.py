@@ -102,7 +102,8 @@ def generate_gear_args(gear_context, FLAG):
         }
 
     # Set API key as environment variable
-    os.environ["FLYWHEEL_API_KEY"] = f"{gear_context.get_input('api_key')['key']}"
+    api_key = gear_context.get_input("api_key")["key"]
+    os.environ["FLYWHEEL_API_KEY"] = f"{api_key}"
 
     gear_args_formatted = pprint.pformat(gear_args)
     log.info(f"Prepared gear stage arguments: \n\n{gear_args_formatted}\n")

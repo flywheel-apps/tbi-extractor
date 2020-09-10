@@ -8,9 +8,6 @@ import flywheel
 
 log = logging.getLogger(__name__)
 
-API_KEY = os.environ.get("FLYWHEEL_API_KEY")
-fw = flywheel.Client(api_key=API_KEY)
-
 
 def run(
     df,
@@ -49,6 +46,9 @@ def run(
         None.
 
     """
+    API_KEY = os.environ.get("FLYWHEEL_API_KEY")
+    fw = flywheel.Client(API_KEY)
+
     log.info("Collating and constructing metadata.")
 
     # Store the report_file file ID

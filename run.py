@@ -17,7 +17,7 @@ def main(gear_context):
 
     # Run tbiExtractor
     df = run_algorithm.run(**gear_args)
-
+    
     # Apply metadata update
     gear_args = parse_config.generate_gear_args(gear_context, "metadata")
     apply_metadata.run(df, **gear_args)
