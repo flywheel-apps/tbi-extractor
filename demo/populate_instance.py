@@ -6,12 +6,13 @@ import flywheel
 
 
 def run(API_KEY):
+    """Orchestrate instance data population."""
 
-    fw = flywheel.Client(api_key=API_KEY)
-
+    # Setup
     GROUP_ID = 'tbi-extractor'
     GROUP_LABEL = 'TBI Extractor Demo'
     PROJECT_LABEL = 'tbi-extractor'
+    fw = flywheel.Client(api_key=API_KEY)
 
     # Create (or capture) group and project
     if not fw.groups.find_first(f"label={GROUP_LABEL}"):
