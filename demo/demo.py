@@ -16,7 +16,7 @@ def main():
 
     # Run tbi-extractor Gear on demo data
     print(
-        "Finished populating instance. WIll begin submitting tbi-extractor Gear jobs."
+        "Finished populating instance. Will begin submitting tbi-extractor Gear jobs."
     )
     run_gear.run(API_KEY)
     print("Finished executing tbi-extractor Gear jobs.")
