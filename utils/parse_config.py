@@ -30,7 +30,9 @@ def generate_gear_args(gear_context, FLAG):
         "hypodensities": gear_context.config["hypodensities"],
         "intracranial_pathology": gear_context.config["intracranial_pathology"],
         "intraparenchymal_hemorrage": gear_context.config["intraparenchymal_hemorrage"],
-        "intraventricular_hemorrhage": gear_context.config["intraventricular_hemorrhage"],
+        "intraventricular_hemorrhage": gear_context.config[
+            "intraventricular_hemorrhage"
+        ],
         "ischemia": gear_context.config["ischemia"],
         "mass_effect": gear_context.config["mass_effect"],
         "microhemorrhage": gear_context.config["microhemorrhage"],
@@ -78,7 +80,9 @@ def generate_gear_args(gear_context, FLAG):
             gear_context.get_input("radiology_report")["hierarchy"].get("type")
             == "acquisition"
         ):
-            report_file_acquisition_id = gear_context.get_input("radiology_report")["hierarchy"].get("id")
+            report_file_acquisition_id = gear_context.get_input("radiology_report")[
+                "hierarchy"
+            ].get("id")
         else:
             log.error("Gear hierarchy has been altered. Exiting.")
             os.sys.exit(1)
@@ -87,23 +91,29 @@ def generate_gear_args(gear_context, FLAG):
             gear_context.get_input("corresponding_scan")["hierarchy"].get("type")
             == "acquisition"
         ):
-            scan_file_acquisition_id = gear_context.get_input("corresponding_scan")["hierarchy"].get("id")
+            scan_file_acquisition_id = gear_context.get_input("corresponding_scan")[
+                "hierarchy"
+            ].get("id")
         else:
             log.error("Gear hierarchy has been altered. Exiting.")
             os.sys.exit(1)
 
         gear_args = {
             "report_file_acquisition_id": report_file_acquisition_id,
-            "report_file_name": gear_context.get_input("radiology_report")["location"].get("name"),
+            "report_file_name": gear_context.get_input("radiology_report")[
+                "location"
+            ].get("name"),
             "scan_file_acquisition_id": scan_file_acquisition_id,
-            "scan_file_name": gear_context.get_input("corresponding_scan")["location"].get("name"),
+            "scan_file_name": gear_context.get_input("corresponding_scan")[
+                "location"
+            ].get("name"),
             "include_targets": include_targets,
             "analysis_id": analysis_id,
         }
 
     # Set API key as environment variable
     api_key = gear_context.get_input("api_key")["key"]
-    os.environ["FLYWHEEL_API_KEY"] = f"{api_key}"
+    os.environ["FW_KEY"] = f"{api_key}"
 
     gear_args_formatted = pprint.pformat(gear_args)
     log.info(f"Prepared gear stage arguments: \n\n{gear_args_formatted}\n")

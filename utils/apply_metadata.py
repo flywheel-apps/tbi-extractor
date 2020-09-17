@@ -46,7 +46,7 @@ def run(
         None.
 
     """
-    API_KEY = os.environ.get("FLYWHEEL_API_KEY")
+    API_KEY = os.environ.get("FW_KEY")
     fw = flywheel.Client(API_KEY)
 
     log.info("Collating and constructing metadata.")
@@ -126,10 +126,11 @@ def collate_annotations(df, include_targets):
     return annotations
 
 
-def collate_derivations(df,
-                        include_targets,
-                        save_target_phrases=False,
-                        save_modifier_phrases=False,
+def collate_derivations(
+    df,
+    include_targets,
+    save_target_phrases=False,
+    save_modifier_phrases=False,
 ):
     """Collate derivations for each lexical target.
 
