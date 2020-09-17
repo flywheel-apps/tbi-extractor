@@ -45,7 +45,7 @@ def test_AlgorithmFunction_AllInputsAccurate():
     df1 = run_algorithm.run(**gear_args)
     df2 = pd.read_csv("tests/assets/df_report_one.csv")
 
-    assert df1.all().all() == df2.all().all()
+    assert df1.equals(df2)
 
 
 def test_AlgorithmFunction_NoPhrasesAccurate():
@@ -60,4 +60,4 @@ def test_AlgorithmFunction_NoPhrasesAccurate():
     df1 = run_algorithm.run(**gear_args)
     df2 = pd.read_csv("tests/assets/df_report_two.csv")
 
-    assert df1.all().all() == df2.all().all()
+    assert df1.equals(df2)
