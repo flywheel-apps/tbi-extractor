@@ -15,7 +15,7 @@ def run(API_KEY):
     fw = flywheel.Client(api_key=API_KEY)
 
     # Create group and project
-    if fw.groups.find_first(f"label={GROUP_LABEL}"):
+    if not fw.groups.find_first(f"label={GROUP_LABEL}"):
         GROUP_ID = fw.add_group(flywheel.Group(GROUP_ID, GROUP_LABEL))
 
     group = fw.get(GROUP_ID)
@@ -34,6 +34,8 @@ def run(API_KEY):
 
         # Create subject from list of demo data subjects
         SUBJECT_LABEL = demo_subject.split("/")[-1]
+        print(f"Populating subject {SUBJECT_LABEL}")
+
         if not project.subjects.find_first(f"label={SUBJECT_LABEL}"):
             subject = project.add_subject(label=SUBJECT_LABEL)
         else:
