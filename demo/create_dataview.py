@@ -15,34 +15,116 @@ def run(API_KEY):
     # Create the data view structure
     view = fw.View(
         label="tbi-extractor Results",
-        columns=["subject.label",
-                 "file.info.tbi-extractor.annotations.aneurysm",
-                 "file.info.tbi-extractor.annotations.anoxic",
-                 "file.info.tbi-extractor.annotations.atrophy",
-                 "file.info.tbi-extractor.annotations.cistern",
-                 "file.info.tbi-extractor.annotations.contusion",
-                 "file.info.tbi-extractor.annotations.diffuse_axonal",
-                 "file.info.tbi-extractor.annotations.epidural_hemorrhage",
-                 "file.info.tbi-extractor.annotations.facial_fracture",
-                 "file.info.tbi-extractor.annotations.fluid",
-                 "file.info.tbi-extractor.annotations.gray_white_differentiation",
-                 "file.info.tbi-extractor.annotations.hemorrhage",
-                 "file.info.tbi-extractor.annotations.herniation",
-                 "file.info.tbi-extractor.annotations.hydrocephalus",
-                 "file.info.tbi-extractor.annotations.hyperdensities",
-                 "file.info.tbi-extractor.annotations.hypodensities",
-                 "file.info.tbi-extractor.annotations.intracranial_pathology",
-                 "file.info.tbi-extractor.annotations.intraparenchymal_hemorrage",
-                 "file.info.tbi-extractor.annotations.intraventricular_hemorrhage",
-                 "file.info.tbi-extractor.annotations.ischemia",
-                 "file.info.tbi-extractor.annotations.mass_effect",
-                 "file.info.tbi-extractor.annotations.microhemorrhage",
-                 "file.info.tbi-extractor.annotations.midline_shift",
-                 "file.info.tbi-extractor.annotations.pneumocephalus",
-                 "file.info.tbi-extractor.annotations.skull_fracture",
-                 "file.info.tbi-extractor.annotations.subarachnoid_hemorrhage",
-                 "file.info.tbi-extractor.annotations.subdural_hemorrhage",
-                 "file.info.tbi-extractor.annotations.swelling"],
+        columns=[
+            (
+                "subject.label", 
+                "Subject"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.epidural_hemorrhage",
+                "Epidural Hemorrhage"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.subdural_hemorrhage",
+                "Subdural Hemorrhage"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.subarachnoid_hemorrhage",
+                "Subarachnoid Hemorrhage"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.intraparenchymal_hemorrage",
+                "Intraparenchymal Hemorrage"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.intraventricular_hemorrhage",
+                "Intraventricular Hemorrhage"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.hemorrhage", 
+                "Hemorrhage (NOS)"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.fluid",
+                "Extraaxial Fluid Collection"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.skull_fracture",
+                "Skull Fracture"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.facial_fracture", 
+                "Facial Fracture"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.aneurysm", 
+                "Aneurysm"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.herniation", 
+                "Herniation"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.swelling", 
+                "Swelling"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.mass_effect", 
+                "Mass Effect"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.midline_shift", 
+                "Midline Shift"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.cistern", 
+                "Cisterns"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.contusion", 
+                "Contustion"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.hyperdensities", 
+                "Hyperdensities"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.hypodensities", 
+                "Hypodensities"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.microhemorrhage", 
+                "Microhemorrhage"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.diffuse_axonal",
+                "Diffuse Axonal Injury",
+            ),
+            (
+                "file.info.tbi-extractor.annotations.ischemia", 
+                "Ischemia"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.anoxic", 
+                "Anoxia"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.atrophy", 
+                "Atrophy"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.hydrocephalus", 
+                "Hydrocephalus"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.pneumocephalus", 
+                "Pneumocephalus"
+            ),
+            (
+                "file.info.tbi-extractor.annotations.intracranial_pathology",
+                "Intracranial Pathology",
+            )
+        ],
         container="acquisition",
         filename="noncontrast-head-ct.*",
     )
