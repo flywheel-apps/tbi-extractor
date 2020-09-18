@@ -2,7 +2,7 @@
   "name": "tbi-extractor",
   "label": "tbiExtractor: Automated extraction of common data elements for traumatic brain injury.",
   "description": "Implementation of tbiExtractor for automated extraction of common data elements from radiology reports for traumatic brain injury.",
-  "version": "0.1.0_0.3.0_rc1",
+  "version": "0.1.0_0.3.0_rc2",
   "author": "Flywheel",
   "maintainer": "Flywheel <support@flywheel.io>",
   "url": "https://github.com/margaretmahan/tbiExtractor",

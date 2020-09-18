@@ -25,7 +25,7 @@ def main():
     print("Creating Data View.")
     create_dataview.run(API_KEY)
     print(
-        "Finished creating Data View. All jobs will need to be completed to see full results in Data View."
+        "\nFinished creating Data View. All jobs will need to be completed to see full results in Data View."
     )
 
     return 0
