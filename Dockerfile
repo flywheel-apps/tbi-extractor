@@ -4,7 +4,7 @@ MAINTAINER Flywheel <support@flywheel.io>
 
 # Python setup
 RUN apt-get update && apt-get install --no-install-recommends -y python3-dev gcc build-essential
-RUN python -m pip install --no-cache-dir https://github.com/margaretmahan/tbiExtractor/archive/0.3.0.tar.gz
+RUN python -m pip install --no-cache-dir https://github.com/margaretmahan/tbiExtractor/archive/0.3.1.tar.gz
 RUN python -m spacy download en
 RUN pip install flywheel-gear-toolkit
 
