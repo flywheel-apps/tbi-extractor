@@ -9,7 +9,7 @@ You must have the appropriate Flywheel permissions to write across the Flywheel 
 2. Build the docker image
     `docker build -t tbi_extractor:demo ./`
 3. Run the docker image
-    `docker run -it -v <PATH-TO-DEMO-DIRECTORY>/demo:/flywheel/v0/demo --entrypoint /bin/bash tbi_extractor:demo`
+    `docker run -it -v <PATH-TO-DEMO-DIRECTORY>:/flywheel/v0/demo --entrypoint /bin/bash tbi_extractor:demo`
 4. Inside the docker image
     `cd demo`
     `export FW_KEY=<FLYWHEEL-API-KEY>`

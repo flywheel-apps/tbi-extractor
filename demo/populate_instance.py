@@ -28,6 +28,11 @@ def run(API_KEY):
     else:
         project = group.add_project(label=f"{PROJECT_LABEL}")
 
+        with open('project_description.txt', 'r') as f:
+            description = f.read()
+
+        project.update(description=description)
+
     # Populate instance with subjects, sessions, acquisitions, and files
     demo_subjects = glob.glob("data/*", recursive=True)
     for demo_subject in demo_subjects:
